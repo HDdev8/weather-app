@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Weather Project</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav><a href="https://github.com/HDdev8">HDDev8's Weather Service</a></nav>
+      <div class="results">
+        <p id="current-city"></p>
+        <p id="current-time"></p>
+        <p id="current-temp"></p>
+        <p id="current-type"></p>
+        <p id="feels-like"></p>
+      </div>
+      <form id="weather-search">
+        <div class="form-field">
+          <label for="location-search"></label>
+          <input
+            type="search"
+            id="location-search"
+            name="q"
+            placeholder="City, ST or Zipcode"
+            aria-label="Search weather in your city" />
+          <button type="submit" form="weather-search">Search</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

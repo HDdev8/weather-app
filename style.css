@@ -1,0 +1,134 @@
+*::before,
+*,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --input-border: #8b8a8b51;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 5rem 25rem 5rem;
+  grid-template-columns: 1fr;
+}
+
+nav {
+  background-color: #24292f;
+  color: white;
+  padding: 1rem;
+  font-size: 2rem;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  grid-row: 3;
+}
+
+.form-field {
+  display: grid;
+  grid-template-rows: 1.5rem 1.5rem;
+  justify-items: center;
+}
+
+label {
+  grid-row: 1;
+}
+
+input {
+  grid-row: 2;
+  padding: 0.5rem 0.25rem 0.5rem 0.25rem;
+  background-color: #fff;
+  border: 0.0625rem solid var(--input-border);
+  border-radius: 0.25rem;
+  height: 1.25rem;
+  width: 10rem;
+  color: black;
+  transition: 180ms box-shadow ease-in-out;
+}
+
+input:focus {
+  border-color: hsl(var(--input-focus-h), var(--input-focus-s), var(--input-focus-l));
+  box-shadow: 0 0 0 0.0625rem hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l) + 40%), 0.8);
+  outline: 0.0625rem solid transparent;
+}
+
+button {
+  background-color: #c24250;
+  border-radius: 0.4375rem;
+  font-size: 0.8rem;
+  color: white;
+  padding: 0.5rem 1.1875rem 0.5rem 1.1875rem;
+  border: transparent;
+  font-family: inherit;
+  width: 6rem;
+}
+
+button:hover {
+  background-color: hsl(353, 51%, 55%);
+}
+button:active {
+  background-color: hsl(353, 51%, 45%);
+  box-shadow: 0 0.0625rem #666;
+  transform: translateY(0.0625rem);
+}
+
+.results {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+  height: 18.75rem;
+  width: 31.25rem;
+  background-color: hsla(210, 17%, 98%, 0.613);
+  border-radius: 0.625rem;
+  display: grid;
+  grid-template-columns: 15.625rem 15.625rem;
+  grid-template-rows: 6.25rem 6.25rem 6.25rem;
+  grid-template-areas:
+    "current-city current-time"
+    "current-temp current-type"
+    "feels-like ... ";
+  justify-items: center;
+}
+
+#current-city {
+  grid-area: current-city;
+  font-size: 1.5rem;
+}
+#current-time {
+  grid-area: current-time;
+  font-size: 1.5rem;
+}
+
+#current-temp {
+  grid-area: current-temp;
+  font-size: 3rem;
+}
+
+#current-type {
+  grid-area: current-type;
+  font-size: 1.5rem;
+}
+
+#feels-like {
+  grid-area: feels-like;
+  font-size: 1rem;
+}
